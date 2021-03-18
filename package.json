@@ -1,0 +1,34 @@
+{
+  "name": "deploy-js-library",
+  "author": {
+    "name": "Ben Kauffman",
+    "email": "ben@krashidbuilt.com",
+    "url": "https://www.krashidbuilt.com"
+  },
+  "copyright": "© KrashidBuilt 2021",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "fix": "echo \"Running linter...\" && yarn run lint --fix",
+    "test": "node test",
+    "bump": "$(npm bin)/bump --tag --commit && git push && git push --tags"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.17.0",
+    "eslint-plugin-prefer-arrow": "^1.2.2",
+    "pre-commit": "^1.2.2",
+    "version-bump-prompt": "^6.1.0"
+  },
+  "dependencies": {
+    "@KrashidBuilt/common": "github:https://github.com/krashidbuilt/common-js-library.git",
+    "aws-sdk": "^2.867.0",
+    "dotenv": "^8.2.0",
+    "yarn": "^1.22.10"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
